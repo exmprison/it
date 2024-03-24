@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henry's IT Help</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #eee;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 40px; /* Increased overall padding */
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 40px 0; /* Increased top and bottom margin for H1 */
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 50px; /* Increased space after description */
+    }
+
+    .plan-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;  
+    }
+
+    .plan {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      margin: 25px 20px; /* Increased space between plans */
+      width: 30%; /* Adjust width for 3 plans side-by-side */
+    }
+
+    .plan h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .plan p {
+      margin: 10px 0; /* Increased space between paragraphs within plans */
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: 2px solid limegreen;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: limegreen;
+      color: #fff;
+      border: 2px solid limegreen;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modal-content {
+      background-color: #444; /* Dark gray background */
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Henry's IT Help</h1>
+  </header>
+  <div class="content-wrapper">
+    <p class="description">Tired of paying for a full-time IT person when you only experience occasional tech issues? 
+    The average Help Desk specialist salary is around $51,000 per year. If you need on-demand IT support without the high cost, 
+    Henry's IT Help is the perfect solution for you! I offer affordable IT assistance for your personal needs. 
+    My plans are designed to fit your specific needs, and I'm always here to help you troubleshoot any problems you encounter. 
+    Plus, I take data security seriously and employ the latest measures to keep your information safe.</p>
+
+    <div class="plan-container">
+      <div class="plan">
+        <h2>Basic ($3/month)</h2>
+        <p>2 AI images<br><br>
+        Save 3 new passwords<br><br>
+        1 AI piece of writing</p>
+        <p>**Recommendation:** We generally don't recommend the Basic plan unless you rarely use this service and only need a limited set of features.</p>
+        <a class="contact-button" href="#" onclick="openModal()">Contact</a>
+      </div>
+      <div class="plan">
+        <h2>Standard ($5/month)</h2>
+        <p>5 AI images<br><br>
+        Unlimited passwords saved<br><br>
+        5 AI writings<br><br>
+        Check all passwords for data breaches<br><br>
+        Unlimited help with other devices (phones & computers)</p>
+        <p>**Recommendation:** This plan is a great choice for regular users who need a good balance of features and affordability.</p>
+        <a class="contact-button" href="#" onclick="openModal()">Contact</a>
+      </div>
+      <div class="plan">
+        <h2>Premium ($7/month)</h2>
+        <p>20 AI images<br><br>
+        Unlimited passwords saved<br><br>
+        Unlimited AI writings<br><br>
+        All passwords checked for data breaches<br><br>
+        Help with all other devices (phones & computers)<br><br>
+        More coming soon!</p>
+        <p>**Recommendation:** For those who use this service extensively and want access to all features, the Premium plan is the best option.</p>
+        <a class="contact-button" href="#" onclick="openModal()">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal popup -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>If you have any questions or you want to get the plan, contact Henry through:</p>
+      <p>Discord: HenryPlays01</p>
+      <p>Email: henryt2102@gmail.com</p>
+      <!-- Phone number can be added here as well -->
+      <!-- <p>Phone number: <span id="phoneNumber"></span></p> -->
+    </div>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("contactModal");
+
+    // Function to open the modal
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
