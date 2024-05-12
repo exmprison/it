@@ -270,27 +270,70 @@
       </div>
   </div>
 
-  <div class="about-us">
-        <div class="text-content">
-          <h2>Testimonials</h2>
-          <p>Coming Soon</p>
-        </div>
+<style>
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure all content is aligned to the center vertically */
+    width: 100%; /* Ensure the container spans the full width of the viewport */
+  }
+
+  .heading-container {
+    text-align: center; /* Center the heading */
+    width: 100%; /* Ensure the container spans the full width */
+  }
+
+  .text-content {
+    text-align: left; /* Align text left for desktop */
+    padding: 20px; /* Add padding to the testimonials section */
+    margin-left: -10px; /* Keep your previous adjustment */
+    width: 100%; /* Ensure it takes full width for alignment */
+  }
+
+  .testimonial-container {
+    padding: 20px; /* Add padding around the testimonials */
+  }
+
+  .testimonial-container p {
+    margin-bottom: 15px; /* Add spacing between testimonials */
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-us .text-content {
+      text-align: center; /* Center text content on mobile */
+    }
+
+    .testimonial-container p {
+      margin-bottom: 20px; /* Increase spacing on mobile */
+    }
+  }
+</style>
+
+  <header>
+    <h1>Testimonials</h1>
+  </header>
+  <div class="content-wrapper">
+      <p>
+        He helped me solve the problem of lack of storage available on my phone and encouraged me to store my many photos and videos on a hard drive. He is now discussing with me the possibility of setting up a website to show my art work. Thank you, Henry for sharing your knowledge with me and being SO patient!!!  -  Anonymous
+      </p>
+      <p>
+        Henry has advised me on saving battery power on my cell phone. He also has helped explain some technical features about computing. He is patient and explains clearly. Henry also is helping me develop a site so I can write about my travels. - Margaret M.
+      </p>
   </div>
 
+<script>
+  // Get the modal
+  var modal = document.getElementById("contactModal");
 
-  <script>
-    // Get the modal
-    var modal = document.getElementById("contactModal");
+  // Function to open the modal
+  function openModal() {
+    modal.style.display = "block";
+  }
 
-    // Function to open the modal
-    function openModal() {
-      modal.style.display = "block";
-    }
-
-    // Function to close the modal
-    function closeModal() {
-      modal.style.display = "none";
-    }
-  </script>
+  // Function to close the modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
+</script>
 </body>
 </html>
