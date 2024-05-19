@@ -209,11 +209,30 @@
       margin-bottom: 15px;
       font-style: italic;
     }
+
+    .view-more-button {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      border: 2px solid #28a745;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .view-more-button:hover {
+      background-color: #fff;
+      color: #28a745;
+      border: 2px solid #28a745;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Henry's IT Help</h1>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">Henry's IT Help</a></h1>
   </header>
   <div class="content-wrapper">
     <p class="description">Tired of paying for a full-time IT person when you only experience occasional tech issues? The average Help Desk specialist salary is around $51,000 per year. If you need on-demand IT support without the high cost, Henry's IT Help is the perfect solution for you! I offer affordable IT assistance for your personal needs. My plans are designed to fit your specific needs, and I'm always here to help you troubleshoot any problems you encounter. Plus, I take data security seriously and employ the latest measures to keep your information safe.</p>
@@ -249,7 +268,7 @@
       </div>
     </div>
 
-    <h2 class="plans-heading">Available Plans</h2>
+    <h2 class="plans-heading"><astyle="color: inherit; text-decoration: none;">Available Plans</a></h2>
 
     <div class="plan-container">
       <div class="plan">
@@ -257,7 +276,7 @@
         <p>Save 3 new passwords<br><br>
           Limited help with new programs like AI</p>
         <p>**Recommendation:** We generally don't recommend the Basic plan unless you rarely use this service and only need a limited set of features.</p>
-        <a class="contact-button" href="#" onclick="openModal()">Contact</a>
+        <a class="contact-button" href="con.html">Contact</a>
       </div>
       <div class="plan">
         <h2>Standard ($5/month)</h2>
@@ -266,7 +285,7 @@
           Unlimited help with other devices<br><br>
           Enhanced password breach check</p>
         <p>**Recommendation:** This plan is a great choice for regular users who need a good balance of features and affordability.</p>
-        <a class="contact-button" href="#" onclick="openModal()">Contact</a>
+        <a class="contact-button" href="con.html">Contact</a>
       </div>
       <div class="plan">
         <h2>Premium ($7/month)</h2>
@@ -278,25 +297,17 @@
             <span class="tooltiptext">I can make websites including blogs or image galleries.</span>
           </span></p>
         <p>**Recommendation:** For those who use this service extensively and want access to all features, the Premium plan is the best option.</p>
-        <a class="contact-button" href="#" onclick="openModal()">Contact</a>
-      </div>
-    </div>
-
-    <div id="contactModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <p>If you have any questions or you want to get the plan, contact Henry through:</p>
-        <p>Discord: HenryPlays01</p>
-        <p>Email: henryt2102@gmail.com</p>
+        <a class="contact-button" href="con.html">Contact</a>
       </div>
     </div>
 
     <div class="content-wrapper testimonial-container">
       <header>
-        <h1>Testimonials</h1>
+        <h1><a href="tes.html" style="color: inherit; text-decoration: none;">Testimonials</a></h1>
       </header>
       <p>He helped me solve the problem of lack of storage available on my phone and encouraged me to store my many photos and videos on a hard drive. He is now discussing with me the possibility of setting up a website to show my art work. Thank you, Henry for sharing your knowledge with me and being SO patient!!! - Anonymous</p>
       <p>Henry has advised me on saving battery power on my cell phone. He also has helped explain some technical features about computing. He is patient and explains clearly. Henry also is helping me develop a site so I can write about my travels. - Margaret M.</p>
+      <a class="view-more-button" href="tes.html">View More</a>
     </div>
   </div>
 
