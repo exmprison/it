@@ -1,1 +1,120 @@
-it.p5232.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact information for Henry's IT Help.">
+  <title>Contact - Henry's IT Help</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    header {
+      background-color: #444;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      margin-left: 20px;
+      position: absolute;
+      left: 20px;
+    }
+
+    header h1 {
+      margin: 20px auto 0 auto;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      width: 80%;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .contact-info {
+      font-size: 1.2em;
+    }
+
+    .contact-info a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: 2px solid #28a745;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 1em;
+    }
+
+    .contact-info a:hover {
+      background-color: #fff;
+      color: #28a745;
+      border: 2px solid #28a745;
+    }
+
+    .contact-info p {
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media screen and (max-width: 768px) {
+      .contact-info {
+        text-align: center;
+      }
+
+      .contact-info a {
+        display: block;
+        margin: 10px auto;
+      }
+
+      .contact-info p {
+        margin: 5px 0;
+        font-size: 0.9em;
+        color: #777;
+        text-align: center;
+      }
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #777;
+      margin-left: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">Home</a>
+    <h1>Contact</h1>
+  </header>
+  <div class="content-wrapper">
+    <div class="contact-info">
+      <p>Email: henryt2102@gmail.com
+        <a href="mailto:henryt2102@gmail.com">Open Mail</a>
+      </p>
+      <p>Phone Number: 4107391333</p>
+    </div>
+  </div>
+</body>
+</html>
