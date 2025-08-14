@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quiz Solver</title>
+    <!-- Tailwind CSS is used for a clean and responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts for a modern, professional look -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <style>
+        /* Custom styles to override Tailwind and add animations */
+        :root {
+            --primary-color: #4CAF50; /* A nice green for highlights */
+            --background-color: #121212; /* Very dark grey background */
+            --text-color: #E0E0E0; /* Light grey for text */
+            --card-background: #1E1E1E; /* Slightly lighter dark card background */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden; /* Prevents horizontal scroll from animations */
+            scroll-behavior: smooth;
+        }
+
+        .animated-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animated-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero section specific styles */
+        .hero-section {
+            background: linear-gradient(135deg, #121212, #212121);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Animation for the "Scraping" step */
+        .scraping-animation {
+            position: relative;
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .scanner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(76, 175, 80, 0.3) 50%, transparent);
+            transform: translateY(-100%);
+        }
+        .animated-section.is-visible .scanner {
+            animation: scan-pulse 3s ease-in-out infinite;
+        }
+        @keyframes scan-pulse {
+            0%, 100% { transform: translateY(-100%); }
+            50% { transform: translateY(100%); }
+        }
+
+        /* Animation for the "AI Analysis" step */
+        .ai-analysis-animation {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        .thinking-dots {
+            display: flex;
+            gap: 1rem;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            opacity: 0;
+        }
+        .animated-section.is-visible .dot {
+            animation: dot-pulse 1.5s ease-in-out infinite;
+        }
+        .animated-section.is-visible .dot:nth-child(1) { animation-delay: 0s; }
+        .animated-section.is-visible .dot:nth-child(2) { animation-delay: 0.2s; }
+        .animated-section.is-visible .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dot-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Animation for the "Automation" step */
+        .automation-animation {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            position: relative;
+            padding: 2rem;
+            min-height: 200px;
+        }
+        .input-field, .button-field {
+            background-color: #121212;
+            border: 2px solid #555;
+            color: var(--text-color);
+            padding: 0.5rem;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .button-field {
+            text-align: center;
+            background-color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: #fff;
+        }
+        .animated-section.is-visible .input-field {
+            animation: fade-in-left 1s ease-out forwards;
+        }
+        .animated-section.is-visible .button-field {
+            animation: fade-in-left 1s ease-out forwards;
+        }
+        .animated-section.is-visible .input-field.input-1 { animation-delay: 0s; }
+        .animated-section.is-visible .input-field.input-2 { animation-delay: 0.5s; }
+        .animated-section.is-visible .button-field { animation-delay: 1s; }
+        @keyframes fade-in-left {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-inter">
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center p-8 text-white">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-6xl font-bold mb-4 tracking-tight">AI Quiz Solver</h1>
+            <p class="text-lg mb-8 leading-relaxed text-gray-400">
+                A professional Chrome extension that uses Google's Gemini models to automatically solve quizzes and answer questions on any webpage.
+            </p>
+            <a href="https://github.com/exmprison/AI-work" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                Go to Repository
+            </a>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+
+            <!-- Section 1: Scraping -->
+            <section class="mb-24 animated-section">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="scraping-animation h-64 shadow-2xl">
+                        <div class="scanner"></div>
+                        <div class="p-8 text-gray-300">
+                            <p class="text-xs mb-2">Webpage Content</p>
+                            <p class="text-xs">Question 1: What is the capital of France?</p>
+                            <p class="text-xs">A) Berlin</p>
+                            <p class="text-xs">B) Madrid</p>
+                            <p class="text-xs">C) Paris</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-200 mb-4">Step 1: Scrape the Page</h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            The extension first acts as a virtual scanner. It efficiently scrapes all the visible text and interactive elements, such as buttons, checkboxes, and text fields, from the current webpage. This creates a detailed map of the content that needs to be analyzed.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: AI Analysis -->
+            <section class="mb-24 animated-section">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                        <div class="ai-analysis-animation shadow-2xl">
+                            <div class="thinking-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:order-1">
+                        <h2 class="text-4xl font-bold text-gray-200 mb-4">Step 2: AI Analysis</h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Next, the scraped data is sent securely to Google's Gemini AI model. The AI processes the information, understands the questions, and determines the most likely correct answers. This step leverages the model's advanced reasoning and problem-solving capabilities to produce a highly accurate solution.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Automation -->
+            <section class="mb-24 animated-section">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="automation-animation h-64 shadow-2xl flex flex-col justify-center gap-4">
+                        <div class="input-field input-1">Type: "123"</div>
+                        <div class="input-field input-2">Click: "Submit"</div>
+                        <div class="button-field button-1">Submit Answer</div>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-200 mb-4">Step 3: Automation</h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Finally, the extension receives the AI's instructions. It then automatically and precisely interacts with the webpage, clicking the correct buttons and typing the answers into the appropriate text boxes. The quiz is completed with minimal effort, saving you time and ensuring accuracy.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500">
+        <p>&copy; 2024 AI Quiz Solver. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle the fade-in-on-scroll animation for sections
+        const animatedSections = document.querySelectorAll('.animated-section');
+
+        const observerOptions = {
+            root: null, // use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: Stop observing once the animation has been triggered
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        animatedSections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
