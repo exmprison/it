@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Henry Tucker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>HT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link active">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tools.html" class="nav-link">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="minecraft.html" class="nav-link">Minecraft</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="websites.html" class="nav-link">Websites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Chop AI -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-eye-slash"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Chop AI for the Blind</h3>
+                        <p class="project-description">AI-powered accessibility tool providing image descriptions, OCR screen reading, and enhanced image accessibility for visually impaired users.</p>
+                        <div class="project-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li><strong>AI Image Descriptions:</strong> Users copy image addresses to clipboard, and Azure AI Vision generates detailed descriptions automatically</li>
+                                <li><strong>OCR Screen Reader:</strong> Activated with Alt+R, it reads text under cursor position in real-time using pytesseract</li>
+                                <li><strong>Image Accessibility:</strong> Enhances images with OCR to make text readable by screen readers while preserving layout</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Azure AI</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Tesseract</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/exmprison/chop" target="_blank" class="btn project-btn">View on GitHub</a>
+                            <a href="https://it.p5232.com/chop" target="_blank" class="btn project-btn">Project Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: KidWind -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">KidWind Current Measurement</h3>
+                        <p class="project-description">A program that measures electrical current using a Raspberry Pi for educational renewable energy projects.</p>
+                        <div class="project-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li><strong>Raspberry Pi Integration:</strong> Uses GPIO pins to interface with current measurement sensors</li>
+                                <li><strong>Data Recording:</strong> Captures and logs current measurements for analysis</li>
+                                <li><strong>Educational Focus:</strong> Designed for hands-on learning about renewable energy and electronics</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Raspberry Pi</span>
+                            <span class="tech-tag">GPIO</span>
+                            <span class="tech-tag">Electronics</span>
+                        </div>
+                        <a href="https://github.com/exmprison/kid-wind" target="_blank" class="btn project-btn">View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: AI Quiz Solver -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Quiz Solver</h3>
+                        <p class="project-description">Chrome extension that automatically answers web quizzes using Google's Gemini AI.</p>
+                        <div class="project-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li><strong>Web Page Analysis:</strong> Scans web pages to identify questions and answer elements in forms</li>
+                                <li><strong>AI Processing:</strong> Sends extracted content to Google's Gemini AI API for answer generation</li>
+                                <li><strong>Auto-Completion:</strong> Automatically fills forms and clicks answers using content scripts</li>
+                                <li><strong>Dual Models:</strong> Offers both Gemini Flash (fast) and Pro (accurate) options</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Chrome Extension</span>
+                            <span class="tech-tag">Google Gemini</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/exmprison/AI-work" target="_blank" class="btn project-btn">View on GitHub</a>
+                            <a href="https://henrytucker.com/quiz" target="_blank" class="btn project-btn">Project Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Henry Tucker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

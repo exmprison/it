@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server Setup | Henry Tucker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>HT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tools.html" class="nav-link">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="minecraft.html" class="nav-link active">Minecraft</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="websites.html" class="nav-link">Websites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="minecraft">
+        <div class="container">
+            <h2 class="section-title">Minecraft Server Setup Guide</h2>
+            <div class="minecraft-steps">
+                <!-- Step 1 -->
+                <div class="minecraft-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Install Java</h3>
+                    <p class="step-description">Minecraft servers require Java to run. Download and install the latest version of Java Development Kit (JDK) from the official Oracle website or use OpenJDK.</p>
+                    <div class="step-note">
+                        <p><strong>Note:</strong> Make sure to install Java 17 or later for the latest Minecraft versions.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="minecraft-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Download PaperMC Server Jar</h3>
+                    <p class="step-description">PaperMC is a high-performance fork of Spigot that provides better performance and more features. Visit the official PaperMC downloads page:</p>
+                    <a href="https://papermc.io/downloads/paper" target="_blank" class="tool-btn" style="margin-bottom: 1rem; display: inline-block;">Download PaperMC</a>
+                    <p class="step-description">Select the latest Minecraft version and download the Paper jar file.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="minecraft-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Create Server Directory</h3>
+                    <p class="step-description">Create a new folder on your computer where you want to run the Minecraft server. For example:</p>
+                    <div class="step-code">
+                        C:\MinecraftServer
+                    </div>
+                    <p class="step-description">Place the downloaded Paper jar file in this directory.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="minecraft-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Create Server Startup Script</h3>
+                    <p class="step-description">Create a batch file (Windows) or shell script (Mac/Linux) to easily start your server. Create a new text file called "start.bat" with the following content:</p>
+                    <div class="step-code">
+@echo off
+java -Xmx4G -Xms4G -jar paper.jar nogui
+pause
+                    </div>
+                    <p class="step-description">Adjust the -Xmx and -Xms values based on your available RAM. This example allocates 4GB.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="minecraft-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Run the Server for the First Time</h3>
+                    <p class="step-description">Double-click your start.bat file to run the server. The first run will generate necessary files and create an eula.txt file.</p>
+                    <div class="step-note">
+                        <p><strong>Important:</strong> You'll need to edit the eula.txt file and change "eula=false" to "eula=true" to agree to the Minecraft EULA.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="minecraft-step">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Configure Server Settings</h3>
+                    <p class="step-description">Edit the server.properties file to customize your server settings:</p>
+                    <div class="step-code">
+# Server Settings
+server-port=25565
+max-players=20
+difficulty=normal
+gamemode=survival
+level-name=world
+motd=A Minecraft Server
+                    </div>
+                    <p class="step-description">You can modify these and other settings to match your preferences.</p>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="minecraft-step">
+                    <div class="step-number">7</div>
+                    <h3 class="step-title">Port Forwarding (For Public Access)</h3>
+                    <p class="step-description">If you want others to join your server over the internet, you'll need to set up port forwarding on your router:</p>
+                    <ol style="color: var(--text-secondary); padding-left: 1.5rem; margin: 1rem 0;">
+                        <li>Access your router's admin panel (usually 192.168.1.1 or 192.168.0.1)</li>
+                        <li>Find the "Port Forwarding" section</li>
+                        <li>Add a new rule to forward port 25565 to your computer's local IP address</li>
+                    </ol>
+                    <div class="step-note">
+                        <p><strong>Note:</strong> The exact steps vary by router model. Check your router's manual for specific instructions.</p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="minecraft-step">
+                    <div class="step-number">8</div>
+                    <h3 class="step-title">Start Playing!</h3>
+                    <p class="step-description">After configuration, start your server again using the start.bat file. Players can connect using your public IP address (for internet play) or "localhost" (for local play).</p>
+                    <div class="step-note">
+                        <p><strong>Tip:</strong> For a smoother experience, consider installing plugins for additional features like world protection, economy systems, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Henry Tucker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
