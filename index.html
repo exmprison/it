@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henry Tucker | Coding Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/holiday.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="holiday-lights"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -30,6 +32,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="websites.html" class="nav-link">Websites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="recipes.html" class="nav-link">Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a href="blog.html" class="nav-link">Blog</a>
@@ -57,9 +62,9 @@
             <div class="particle"></div>
         </div>
         <div class="hero-container">
-            <h1 class="hero-title animated-text typewriter">Henry Tucker</h1>
-            <p class="hero-subtitle">Software Developer & Accessibility Innovator</p>
-            <p class="hero-description">Creating technology solutions that make the digital world more accessible and inclusive for everyone. Explore my projects, tools, and resources for developers.</p>
+            <h1 class="hero-title animated-text typewriter">Henry Tucker <span class="santa-hat">🎅</span></h1>
+            <p class="hero-subtitle">Just a guy making projects</p>
+            <p class="hero-description">Wishing you a happy holiday season! I'm taking a short break, but feel free to look around.</p>
             <div class="hero-buttons">
                 <a href="blog.html" class="btn primary">Blog</a>
                 <a href="https://github.com/exmprison" target="_blank" class="btn secondary">GitHub Profile</a>
@@ -168,6 +173,30 @@
         <div class="container">
             <h2 class="section-title">Featured Work</h2>
             
+            <!-- Recipes Highlight -->
+            <div class="feature-row">
+                <div class="feature-content">
+                    <h3 class="feature-title">My Favorite Recipes</h3>
+                    <p class="feature-description">A collection of my favorite recipes, from savory meals to sweet treats.</p>
+                    <div class="feature-details">
+                        <ul>
+                            <li>Barbacoa</li>
+                            <li>Cookies</li>
+                            <li>Mac and Cheese</li>
+                            <li>And more to come!</li>
+                        </ul>
+                    </div>
+                    <div class="feature-buttons">
+                        <a href="recipes.html" class="btn primary">View Recipes</a>
+                    </div>
+                </div>
+                <div class="feature-image">
+                    <div class="image-placeholder">
+                        <img src="assets/tools-preview.png" alt="Recipes" class="feature-img">
+                    </div>
+                </div>
+            </div>
+
             <!-- General Projects Highlight -->
             <div class="feature-row">
                 <div class="feature-content">
@@ -264,6 +293,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -285,5 +315,8 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/holiday.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <!-- You found an easter egg! Good job! -->
 </body>
 </html>

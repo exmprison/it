@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Henry Tucker</title>
+    <title>Recipes | Henry Tucker</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/holiday.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -33,10 +33,10 @@
                         <a href="websites.html" class="nav-link">Websites</a>
                     </li>
                     <li class="nav-item">
-                        <a href="recipes.html" class="nav-link">Recipes</a>
+                        <a href="recipes.html" class="nav-link active">Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link active">Blog</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-link">About</a>
@@ -51,24 +51,36 @@
         </nav>
     </header>
 
-    <section class="blog">
-        <div class="container">
-            <h2 class="section-title">Latest Blog Posts</h2>
-            <div class="blog-toolbar">
-                <div class="sort-options">
-                    <label for="sort-by">Sort by:</label>
-                    <select id="sort-by">
-                        <option value="newest">Newest</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="title">Title</option>
-                    </select>
-                </div>
-                <div class="filter-options">
-                    <input type="text" id="filter-input" placeholder="Filter by tag or title...">
+    <section class="hero">
+        <img src="assets/banner-placeholder.png" alt="Banner" class="hero-banner">
+        <div class="hero-container">
+            <h1 class="hero-title">Recipes</h1>
+            <p class="hero-subtitle">A collection of my favorite recipes.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="websites-grid">
+            <div class="website-card">
+                <div class="website-content">
+                    <h3 class="website-title">Barbacoa</h3>
+                    <p class="website-description">Tasty barbacoa for tacos that falls apart in your mouth.</p>
+                    <a href="barbacoa.html" class="website-btn">View Recipe</a>
                 </div>
             </div>
-            <div class="blog-grid" id="blog-grid">
-                <!-- Blog posts will be dynamically inserted here -->
+            <div class="website-card">
+                <div class="website-content">
+                    <h3 class="website-title">Cookies</h3>
+                    <p class="website-description">Delicious homemade cookies, perfect for any occasion.</p>
+                    <a href="cookies.html" class="website-btn">View Recipe</a>
+                </div>
+            </div>
+            <div class="website-card">
+                <div class="website-content">
+                    <h3 class="website-title">Mac and Cheese</h3>
+                    <p class="website-description">Creamy, cheesy, and delicious homemade mac and cheese.</p>
+                    <a href="mac-and-cheese.html" class="website-btn">View Recipe</a>
+                </div>
             </div>
         </div>
     </section>
@@ -79,7 +91,7 @@
         </div>
     </footer>
 
-    <script src="js/blog.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/holiday.js"></script>
     <script src="js/easter-eggs.js"></script>
 </body>

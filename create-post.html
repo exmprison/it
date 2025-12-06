@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Blog Post</title>
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/holiday.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" onload="initializeEditor()"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Post</h1>
+        <input type="text" id="post-title" placeholder="Post Title">
+        <input type="text" id="post-tags" placeholder="Tags (comma-separated)">
+        <input type="text" id="post-cover-image" placeholder="Cover Image URL">
+        <textarea id="markdown-editor"></textarea>
+        <button id="add-element-btn">Add Link/Button</button>
+        <button id="publish-btn">Publish</button>
+    </div>
+
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+    <script src="js/create-post.js"></script>
+    <script src="js/holiday.js"></script>
+    <script src="js/easter-eggs.js"></script>
+</body>
+</html>

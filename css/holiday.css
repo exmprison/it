@@ -1,0 +1,206 @@
+/* Holiday Styles */
+:root {
+    --primary-dark: #1a2238;
+    --secondary-dark: #2a3b59;
+    --accent-color: #ff6b6b;
+    --accent-light: #ff8e8e;
+    --accent-bright: #ffbaba;
+    --title-gradient-1: #ff6b6b;
+    --title-gradient-2: #ffbaba;
+    --text-primary: #f0f8ff;
+    --text-secondary: #dcdcdc;
+    --text-tertiary: #b0c4de;
+    --border-color: #4a5568;
+    --card-bg: #2a3b59;
+    --transition: all 0.3s ease;
+    --text-light-gray: #d3d3d3;
+    --snow-color: #ffffff;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--text-primary);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffbaba, #2a3b59, #1a2238);
+    background-size: 400% 400%;
+    animation: aurora 15s ease infinite;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+@keyframes aurora {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: var(--snow-color);
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+        opacity: 0;
+    }
+}
+
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Frosted Glass Effect */
+.navbar,
+.card-bg {
+    background-color: rgba(42, 59, 89, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glowing Text and Buttons */
+.hero-title,
+.btn.primary {
+    text-shadow: 0 0 5px var(--accent-light), 0 0 10px var(--accent-light);
+}
+
+.section-title {
+    color: var(--text-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.section-title::before {
+    content: '🎅';
+    position: absolute;
+    left: -40px;
+    top: -10px;
+    font-size: 30px;
+    animation: santa-wave 2s infinite;
+}
+
+.santa-hat {
+    display: inline-block;
+    animation: santa-wave 2s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes santa-wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.btn.primary {
+    box-shadow: 0 0 10px var(--accent-light), 0 0 20px var(--accent-light);
+}
+
+.btn:hover {
+    animation: jiggle 0.5s;
+}
+
+@keyframes jiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+}
+
+.logo h2 {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff6b6b, 0 0 20px #ff6b6b, 0 0 25px #ff6b6b, 0 0 30px #ff6b6b, 0 0 35px #ff6b6b;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 15px #ff8e8e, 0 0 20px #ff8e8e, 0 0 25px #ff8e8e, 0 0 30px #ff8e8e, 0 0 35px #ff8e8e, 0 0 40px #ff8e8e;
+    }
+}
+
+.holiday-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1002;
+    display: flex;
+    justify-content: space-around;
+}
+
+.holiday-lights::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #222;
+}
+
+.holiday-lights .light {
+    position: relative;
+    width: 15px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 15px;
+    animation: light-blink 1s infinite;
+}
+
+.holiday-lights .light:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.holiday-lights .light::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 3px;
+    width: 9px;
+    height: 15px;
+    background: #444;
+    border-radius: 4px 4px 0 0;
+}
+
+@keyframes light-blink {
+    0%, 100% { background: #fff; box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; }
+    50% { background: #555; box-shadow: none; }
+}
+
+.nav-link:hover,
+.nav-link.active {
+    text-shadow: 0 0 5px var(--accent-light);
+}
